@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Public API Collection",
+    "version": "1.0",
+    "description": "A collection of sample public APIs for testing and development."
+  },
+  "servers": [
+    {
+      "url": "https://api.coindesk.com/v1"
+    }
+  ],
+  "paths": {
+    "/posts": {
+      "get": {
+        "summary": "Retrieve list of posts",
+        "description": "Returns a list of placeholder posts.",
+        "responses": {
+          "200": {
+            "description": "Successful response with posts"
+          }
+        }
+      }
+    },
+    "/posts/{id}": {
+      "get": {
+        "summary": "Retrieve a single post by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the post"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a post"
+          },
+          "404": {
+            "description": "Post not found"
+          }
+        }
+      }
+    },
+    "/bpi/currentprice.json": {
+      "get": {
+        "summary": "Get current Bitcoin price index",
+        "description": "Returns current Bitcoin price in various currencies.",
+        "responses": {
+          "200": {
+            "description": "Successful response with Bitcoin price index"
+          }
+        }
+      }
+    }
+  },
+  "testing": {
+    "endpoints": [
+      {
+        "path": "/posts",
+        "method": "GET",
+        "test_case": {
+          "description": "Fetch all posts",
+          "expected_status": 200
+        }
+      },
+      {
+        "path": "/posts/{id}",
+        "method": "GET",
+        "test_case": {
+          "description": "Fetch a single post",
+          "parameters": {
+            "id": 1
+          },
+          "expected_status": 200
+        }
+      },
+      {
+        "path": "/bpi/currentprice.json",
+        "method": "GET",
+        "test_case": {
+          "description": "Fetch current Bitcoin price",
+          "expected_status": 200
+        }
+      }
+    ]
+  }
+}

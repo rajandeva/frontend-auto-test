@@ -1,0 +1,42 @@
+{
+  "name": "frontend-auto-test",
+  "version": "1.0.0",
+  "description": "This repo consists of fronted web automation suite using Playwright.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npx playwright test",
+    "test:grep": "npx playwright test --grep",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npx playwright install --with-deps",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajandeva/frontend-auto-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajandeva/frontend-auto-test/issues"
+  },
+  "homepage": "https://github.com/rajandeva/frontend-auto-test#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@playwright/test": "^1.55.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.4.0",
+    "dotenv": "^17.2.2",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "jiti": "^2.5.1",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.44.0"
+  }
+}
